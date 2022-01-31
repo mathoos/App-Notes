@@ -1,0 +1,184 @@
+body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: rgb(243,214,255);
+  background: linear-gradient(90deg, rgba(243,214,255,1) 0%, rgba(255,200,128,1) 100%);
+  font-family: "Calibri"
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Div qui contient toutes les cards et qui s'agrandi quand on ajoute des cards */
+
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+}
+
+
+/* Une card entière*/
+
+.card{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: calc(100% / 4);
+  max-width: calc(100% / 2.5);
+  resize: both; /* pour pouvoir redimensionner la zone de textarea en fonction du nombre de caractère */
+  min-height: 25em;
+  max-height: 25em;
+  margin: 2%;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+  border-radius: 20px;
+  background-color: #F1F1F1;
+}
+.card:nth-child(odd){
+  flex-grow : 2;  
+}
+
+
+/* Haut de la card */
+
+.up{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(170, 132, 221);
+  width: 100%;
+  height: 20%;
+}
+.title{
+  width: calc(100% - (25% + 12%));
+  background-color: transparent; 
+  padding-left: 1rem;
+  font-size: 2em;
+  color: white;
+  border: 0;
+  outline: none;
+  resize: none;
+}
+.title::placeholder{
+  font-style: italic;
+  color: white;
+}
+.title:focus::placeholder{
+  color: transparent;
+}
+
+.delete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 100%;
+  cursor: pointer;
+  font-size: 2em;
+  color: white;
+}
+
+/* Milieu de la card */
+
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  background-color: #F1F1F1;
+  margin: 2em;
+}
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F1F1F1;
+}
+.main p{
+  margin: 0;
+  font-family: "Calibri";
+  letter-spacing: 1px;
+}
+
+.textArea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "Calibri";
+  letter-spacing: 1px;
+  background-color: #F1F1F1;
+}
+.textArea::placeholder{
+  font-style: italic;
+}
+
+/* Bas de la card */ 
+
+
+.down{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 10%;
+  box-sizing: border-box;
+}
+.color{
+  min-width: 1.5em;
+  min-height: 1.5em;
+
+  margin-right: 2%;
+  cursor: pointer;
+}
+#purple{
+  background-color: rgb(170, 132, 221);
+}
+
+.edit{
+  width: 15%;
+  margin-right: 5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: grey;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Bouton pour ajouter une card */ 
+
+
+
+#add{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  bottom: 2%;
+  right: 2%;
+  background-color: rgb(30, 29, 31);
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 5em;
+  font-weight: bolder;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  transition: all .2s ease-in-out;
+  z-index: 10;
+
+}
+
